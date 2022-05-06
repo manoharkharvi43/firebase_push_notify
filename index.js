@@ -10,6 +10,6 @@ app.get("/home", (req, res) => {
 });
 
 app.use("/", routes);
-app.listen(process.env.PORT || 8000, () => {
+app.listen(process.env.PORT || 8001, () => {
   console.log("running on port 8000");
 });
