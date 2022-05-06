@@ -1,6 +1,9 @@
 const express = require("express");
 
-const port = require("dotenv").config();
+const dotenv = require("dotenv");
+dotenv.config();
+
+const port = process.env.PORT;
 const app = express();
 const routes = require("./routes/notification");
 app.use(express.json());
@@ -10,6 +13,6 @@ app.get("/home", (req, res) => {
 });
 
 app.use("/", routes);
-app.listen(process.env.PORT || 8001, () => {
+app.listen(port || 8001, () => {
   console.log("running on port 8000");
 });
